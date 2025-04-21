@@ -1,0 +1,34 @@
+<?php
+	include("connect.php");
+	//include('nav_bar.php');
+	$con=mysqli_connect('localhost','root','');
+	
+	if(!$con)
+	{
+		echo 'Not connected to server';
+	}
+	
+	if(!mysqli_select_db($con,'expenses'))
+	{
+		echo 'Database not selected';
+	}
+
+	$Name = $_POST['tpe'];
+	$var1=$_SESSION['user_id'];
+	$Email = $_POST['dsc'];
+	$Amount = $_POST['amt'];
+	$threshold = $_POST['thr'];
+	$create_datetime = date("Y-m-d H:i:s");
+	
+	$sql = "INSERT INTO monthly_expenses (Name,user_id,Email,Amount,create_datetime) VALUES ('$Name','$var1','$Email','$Amount','$create_datetime')";
+	
+	if(!mysqli_query($con,$sql))
+	{
+		echo 'Not Inserted';
+	}
+	else
+	{
+		echo 'Expense recorded successfully';
+	}
+	header("refresh:2,url=index1.php");
+?>
