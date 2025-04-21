@@ -93,7 +93,7 @@ Manual testing was performed across 25+ test cases covering:
 
 ---
 
-## 📚 References
+##  References
 
 - [W3Schools - HTML, CSS, PHP](https://www.w3schools.com/)
 - [TutorialsPoint - JavaScript](https://www.tutorialspoint.com/javascript/index.htm)
